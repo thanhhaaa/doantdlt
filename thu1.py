@@ -12,12 +12,21 @@ while flag == False:
         print('phút không tồn tại, vui lòng nhập lại phút báo thức: ')
     else:
         flag = True
+flag=True
+while flag == True:
 
-from datetime import datetime
+    from datetime import datetime #đưa cái này vào vòng lặp
 
-now = datetime.now()
+    now = datetime.now()
 
-current_hour = now.strftime("%H")
-current_minute = now.strftime("%M")
-print('giờ hiện tại: ',current_hour)
-print('phút hiện tại: ',current_minute)
+    current_hour = now.strftime("%H")
+    current_minute = now.strftime("%M")
+    print('giờ hiện tại: ',current_hour)
+    print('phút hiện tại: ',current_minute)
+
+    if current_hour==gbt and current_minute==pbt:
+        print('wake up')
+        flag = False
+    else:
+        flag =True
+        print('ngủ tiếp')
