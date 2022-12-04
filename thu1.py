@@ -24,7 +24,8 @@ while flag == True:
     print('giờ hiện tại: ',current_hour)
     print('phút hiện tại: ',current_minute)
 
-    if current_hour==gbt and current_minute==pbt:
+
+    if int(current_hour) == gbt and int(current_minute) == pbt: #đổi về int
         print('wake up')
         flag = False
     else:
