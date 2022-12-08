@@ -75,12 +75,16 @@ t1 = datetime(year=today.year, month=today.month, day=today.day, hour=today.hour
               second=today.second)
 t2 = datetime(year=nbt, month=tbt, day=ngbt, hour=gbt, minute=pbt, second=giaybt)
 t3 = t2 - t1
-number_of_days = t3.days
-number_of_seconds = t3.seconds
-sogio = t3.seconds // 3600
-sophut = (t3.seconds % 3600) // 60
-sogiay = t3.seconds - (sogio * 3600 + sophut * 60)
-print("Báo thức sẽ kêu sau: ",number_of_days, "ngày" , sogio, "giờ", sophut, "phút", sogiay, "giây")
+t4 = t1 - t2
+if t3 > t4:
+    number_of_days = t3.days
+    number_of_seconds = t3.seconds
+    sogio = t3.seconds // 3600
+    sophut = (t3.seconds % 3600) // 60
+    sogiay = t3.seconds - (sogio * 3600 + sophut * 60)
+    print("Báo thức sẽ kêu sau: ",number_of_days, "ngày" , sogio, "giờ", sophut, "phút", sogiay, "giây")
+else:
+    print('Thời gian đặt báo thức không hợp lệ')
 flag=False
 while flag==False :
    from datetime import datetime #hiển thị thời gian trong python
